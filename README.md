@@ -8,4 +8,4 @@ thingstore is on pypi
 `pip install thingstore`
 
 thingstore is on readthedocs
-
+https://thingstore.readthedocs.org/en/latest/

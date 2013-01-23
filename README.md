@@ -1,11 +1,11 @@
-thingstore
-==========
+kale
+====
 
-thingstore is built on mongodb
+kale is built on mongodb
 http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
 
-thingstore is on pypi
-`pip install thingstore`
+kale is on pypi
+`pip install kale`
 
-thingstore is on readthedocs
-https://thingstore.readthedocs.org/en/latest/
+kale is on readthedocs
+https://kale.readthedocs.org/en/latest/

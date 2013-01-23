@@ -4,14 +4,14 @@ except ImportError:
     from distutils.core import setup
 
 setup(
-    name='thingstore',
+    name='kale',
     description='store things',
-    version='0.0.1b',
+    version='0.0.1c',
     author='Philip Schleihauf',
     author_email='uniphil@gmail.com',
-    packages=['thingstore'],
+    packages=['kale'],
     install_requires=['minimongo'],
     license='GNU Public License v3',
     long_description=open('README.md').read(),
-    url='https://github.com/uniphil/thingstore',
+    url='https://github.com/uniphil/kale',
 )

@@ -1,5 +1,5 @@
 
-thingstore
+kale
 ==========
 
 Contents:

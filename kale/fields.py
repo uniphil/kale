@@ -21,29 +21,47 @@ class BaseField(object):
     def raw(self): return # yum
 
 
-class SelfRaw(BaseField):
-    """for types that already represent and initialize their state completely
-    with repr -- simply wraps repr with the required raw property"""
+class Float(BaseField, float):
     def raw(self):
-        return repr(self)
+        return float(self)
 
-        
-#class Boolean(SelfRaw, bool): pass # lol nope
-class Integer(SelfRaw, int): pass # DANGER: watch for overflows...
-class Float(SelfRaw, float): pass
-class Complex(SelfRaw, complex): pass # !!! will this one work?
-class String(SelfRaw, str): pass # nooooooo repr adds quotes
-#class Unicode(SelfRaw, UnicodeType): pass # !!! will this one work?
-class Tuple(SelfRaw, tuple): pass
-class List(SelfRaw, list): pass
-class Dictionary(SelfRaw, dict): pass
 
-class String(object):
-    """docstring for String"""
-    def __init__(self, arg):
-        super(String, self).__init__()
-        self.arg = arg
+class Integer(BaseField, int):
+    def raw(self):
+        return int(self)
 
+
+class Float(BaseField, float):
+    def raw(self):
+        return float(self)
+
+
+class Complex(BaseField, complex):
+    def __init__(self, state):
+        super(Complex, self).__init__(state['real'], state['imag'])
+    def raw(self):
+        return {'real': self.real, 'imag': self.imag}
+
+
+class String(BaseField, str):
+    def raw(self):
+        return str(self)
+
+
+class Tuple(BaseField, tuple):
+    def raw(self):
+        """json has no notion of tuples, only lists"""
+        return list(self)
+
+
+class List(BaseField, list):
+    def raw(self):
+        return list(self)
+
+
+class Dictionary(BaseField, dict):
+    def raw(self):
+        return dict(self)
 
 
 class SimpleState(BaseField):

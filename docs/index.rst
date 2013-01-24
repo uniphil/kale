@@ -1,6 +1,6 @@
 
 kale
-==========
+====
 
 Contents:
 
@@ -9,5 +9,4 @@ Contents:
 
    intro
    tutorial
-
-
+   recipes
